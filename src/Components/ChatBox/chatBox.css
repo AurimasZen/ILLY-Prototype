@@ -1,0 +1,41 @@
+.chatBox{
+    width: clamp(200px, 40vw, 500px);
+    height: 75vh;
+    padding: 1rem 2rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 90% 10%;
+
+    background-color: white;
+    box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+
+    & .chatContent{
+        height: 90%;
+
+        & .chatHistory {
+            height: 100%;
+            overflow-y: scroll;
+
+            & p{
+                border-bottom: 0.5px solid;
+                padding: 3px 0px;
+
+                &:hover{
+                    background-color: rgba(107, 254, 254, 0.294);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.chatInput{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & input{
+        width: 80%;
+    }
+}

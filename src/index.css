@@ -1,0 +1,18 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  background-image: url("./Background.png");
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.mainContainer{
+  height: 100vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
