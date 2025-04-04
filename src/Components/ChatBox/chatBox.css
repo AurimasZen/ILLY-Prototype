@@ -12,19 +12,30 @@
 
     & .chatContent{
         height: 90%;
+        overflow-y: scroll;
 
         & .chatHistory {
             height: 100%;
             overflow-y: scroll;
 
-            & p{
-                border-bottom: 0.5px solid;
+            & .message{
                 padding: 3px 0px;
+                margin-bottom: 1rem;
+
+                & .message_author{
+                    color: rgb(226, 158, 170);
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
 
                 &:hover{
                     background-color: rgba(107, 254, 254, 0.294);
                     cursor: pointer;
                 }
+            }
+
+            & .message:nth-of-type(2n){
+                text-align: end;
             }
         }
     }
