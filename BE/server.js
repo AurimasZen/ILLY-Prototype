@@ -15,7 +15,7 @@ app.post("/chat", (req, res) => {
         return res.status(400).json({ error: "Message is required" });
     }
 
-    res.json({ reply: `You said: ${message}` });
+    res.json({ author: "ILLY", text: `This is AI reply` });
 });
 
 const PORT = process.env.PORT || 5000;
