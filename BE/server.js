@@ -40,16 +40,17 @@ app.post("/chat", async (req, res) => {
 
     try {
         console.log("Sending a request");
-        const aiResponse = await anthropic.messages.create({
-            model: "claude-3-5-haiku-20241022",
-            max_tokens: 1024,
-            temperature: 0.7,
-            system: systemPrompt,
-            messages: trimmedHistory,
-        });
+        // const aiResponse = await anthropic.messages.create({
+        //     model: "claude-3-5-haiku-20241022",
+        //     max_tokens: 1024,
+        //     temperature: 0.7,
+        //     system: systemPrompt,
+        //     messages: trimmedHistory,
+        // });
 
         // Save assistant's response to history
-        const reply = aiResponse.content[0]?.text || "Atsiprašau, bet man nepavyko atsakyti.";
+        //const reply = aiResponse.content[0]?.text || "Atsiprašau, bet man nepavyko atsakyti.";
+        const reply = "Atsiprašau, bet man nepavyko atsakyti.";
         console.log("Got Response: ", reply);
         conversationHistory.push({ role: "assistant", content: reply });
 

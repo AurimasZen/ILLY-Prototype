@@ -15,4 +15,10 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  & img.ILLY{
+    height: 70vh;
+    position: relative;
+    margin-top: 60vh;
+  }
 }
