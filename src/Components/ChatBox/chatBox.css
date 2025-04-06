@@ -1,36 +1,43 @@
 .chatBox{
-    width: clamp(200px, 40vw, 500px);
-    height: 75vh;
-    padding: 1rem 2rem;
+    width: clamp(300px, 50vw, 700px);
+    height: 100vh;
+    padding-bottom: 10vh;
 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 90% 10%;
 
-    background-color: white;
-    box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
-
     & .chatContent{
-        height: 90%;
-        overflow-y: scroll;
+        height: 100%;
 
         & .chatHistory {
             height: 100%;
-            overflow-y: scroll;
+            display: flex;
+            flex-direction: column-reverse;
+            
+            overflow-y: auto;
 
             & .message{
-                padding: 3px 0px;
+                background: rgb(243,249,255);
+                background: linear-gradient(176deg, rgba(243,249,255,1) 42%, rgba(255,255,255,1) 100%);                
+                box-shadow: 4px 33px 18px -39px rgba(0,0,0,0.75);
+
+                border-radius: 1rem;
+
+                padding: 1rem 1rem;
                 margin-bottom: 1rem;
 
                 & .message_author{
                     color: rgb(226, 158, 170);
                     font-weight: bold;
+                    font-size: 18px;
                     margin-bottom: 5px;
                 }
 
+                transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
                 &:hover{
-                    background-color: rgba(107, 254, 254, 0.294);
-                    cursor: pointer;
+                    transform: translateY(-6px);
                 }
             }
 
@@ -47,6 +54,42 @@
     align-items: center;
 
     & input{
+        all: unset;
         width: 80%;
+        padding: 1rem 1rem;
+
+        border-radius: 1rem;
+        
+        background: rgb(243,249,255);
+        background: linear-gradient(176deg, rgba(243,249,255,1) 42%, rgba(255,255,255,1) 100%);                
+        box-shadow: 4px 33px 18px -39px rgba(0,0,0,0.75);
+
+        transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        &:hover{
+            transform: translateY(-6px);
+        }
+    }
+
+    & button{
+        padding: 1rem 1rem;
+
+        border-radius: 1rem;
+        background: rgb(243,249,255);
+        background: linear-gradient(176deg, rgba(243,249,255,1) 42%, rgba(255,255,255,1) 100%);                
+        box-shadow: 4px 33px 18px -39px rgba(0,0,0,0.75);
+
+        font-weight: bold;
+
+        transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        &:hover{
+            transform: translateY(-6px);
+        }
+
+        &:active {
+            transform: scale(0.98);
+            filter: brightness(0.95);
+        }
     }
 }

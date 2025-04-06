@@ -4,7 +4,7 @@ import { ChatBoxInput } from "./ChatBoxInput";
 import "./chatBox.css";
 
 export const ChatBox = () => {
-    const [chat, setChat] = useState([{author: "ILLY", text: "Hey there! Nice to see you! How are you today?"}]);
+    const [chat, setChat] = useState([{author: "ILLY", text: "Labas, mano vardas ILLY. Man magiškoji fėja pakuždėjo, jog tau buvo diagnozuotas vėžys. Nesijaudink, aš atkeliavau, kad padėčiau tau susipažinti su tuo, kas yra vėžys, kaip suprasti savo diagnozę ir ką tai reiškia tau. Aš būsiu šalia ir atsakysiu į visus tau rūpimus klausimus, kad jaustumeisi saugiai ir suprastum, kas vyksta. Susipažinkime, kuo tu vardu?"}]);
 
     const handleSubmit = async (userInput: string) => {
         if (!userInput.trim()) return;
@@ -29,15 +29,16 @@ export const ChatBox = () => {
     return (
         <div className="chatBox">
             <div className="chatContent">
-                <h1>Chat</h1>
                 <div className="chatHistory">
-                    {chat.map((message) => {
-                        return (
-                        <div className="message">
-                            <p className="message_author">{message.author}</p>
-                            <p className="message_text">{message.text}</p>
-                        </div>);
-                    })}
+                {chat
+                    .slice()
+                    .reverse()
+                    .map((message, index) => (
+                    <div key={index} className="message">
+                        <p className="message_author">{message.author}</p>
+                        <p className="message_text">{message.text}</p>
+                    </div>
+                ))}
                 </div>
             </div>
             <ChatBoxInput handleSubmit = {handleSubmit}/>
