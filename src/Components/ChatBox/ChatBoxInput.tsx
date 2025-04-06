@@ -28,7 +28,7 @@ export const ChatBoxInput = ({ handleSubmit }: ChatBoxInputProps) => {
                      submitMessage();
                 }}
             >
-                Enter
+                <p>Enter</p>
             </button>
         </div>
     );

@@ -5,7 +5,7 @@ export const App = () => {
   return(
     <div className='mainContainer'>
       <ChatBox/>
-      <h1>ILLY</h1>
+      <img className="ILLY" src="ILLY.png" alt="Visualization of the plushy toy - ILLY"/>
     </div>
   );
 }
